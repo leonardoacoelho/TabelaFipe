@@ -57,6 +57,8 @@ namespace TabelaFipe.UI
 
                 bo.Salvar(_modelo);
 
+                picModelo.Image.Exportar("Modelo", _modelo.Id);
+
                 MessageBox.Show("Salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Hide();
@@ -81,6 +83,8 @@ namespace TabelaFipe.UI
 
             if (result == DialogResult.Yes)
             {
+                RemoverImagem();
+
                 bo.Remover(id);
 
                 MessageBox.Show("Removido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -101,6 +105,8 @@ namespace TabelaFipe.UI
                 txtPortas.Text = _modelo.QuantPortas.ToString();
                 txtMarcaId.Text = _modelo.Marca_Id.ToString();
                 txtMarca.Text = _marca.Nome;
+
+                picModelo.Image = ImagemBo.Importar("Modelo", _modelo.Id);
 
                 AtualizarGrid();
                 menuRemover.Visible = true;
@@ -145,6 +151,25 @@ namespace TabelaFipe.UI
 
                     throw;
                 }
+            }
+        }
+
+        private void btnRemoverImage_Click(object sender, EventArgs e)
+        {
+            RemoverImagem();
+        }
+
+        private void RemoverImagem()
+        {
+            picModelo.Image = null;
+            ImagemBo.Delete("Modelo", _modelo.Id);
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            if (ofdImagem.ShowDialog() == DialogResult.OK)
+            {
+                picModelo.Image = new Bitmap(ofdImagem.FileName);
             }
         }
     }

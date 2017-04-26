@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TabelaFipe.BLL;
 
@@ -47,6 +48,8 @@ namespace TabelaFipe.UI
 
                 bo.Salvar(_marca);
 
+                picMarca.Image.Exportar("Marca",_marca.Id);
+
                 MessageBox.Show("Salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     _listaMarcas.AtualizarGrid();
@@ -68,6 +71,8 @@ namespace TabelaFipe.UI
             {
                 txtId.Text = _marca.Id.ToString();
                 txtNome.Text = _marca.Nome;
+
+                picMarca.Image = ImagemBo.Importar("Marca", _marca.Id);
 
                 menuRemover.Visible = true;
                 menuAdd.Visible = true;
@@ -95,6 +100,8 @@ namespace TabelaFipe.UI
 
             if (result == DialogResult.Yes)
             {
+                RemoverImagem();
+
                 bo.Remover(id);
 
                 MessageBox.Show("Removido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -129,6 +136,25 @@ namespace TabelaFipe.UI
                     throw;
                 }
             }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            if (ofdImagem.ShowDialog() == DialogResult.OK)
+            {
+                picMarca.Image = new Bitmap(ofdImagem.FileName);
+            }
+        }
+
+        private void btnRemoverImage_Click(object sender, EventArgs e)
+        {
+            RemoverImagem();
+        }
+
+        private void RemoverImagem()
+        {
+            picMarca.Image = null;
+            ImagemBo.Delete("Marca", _marca.Id);
         }
     }
 }

@@ -49,6 +49,10 @@
             this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRemover = new System.Windows.Forms.ToolStripMenuItem();
+            this.picMarca = new System.Windows.Forms.PictureBox();
+            this.ofdImagem = new System.Windows.Forms.OpenFileDialog();
+            this.btnAddImage = new System.Windows.Forms.Button();
+            this.btnRemoverImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsModelos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -57,6 +61,7 @@
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvModelos
@@ -81,7 +86,7 @@
             this.dgvModelos.Name = "dgvModelos";
             this.dgvModelos.ReadOnly = true;
             this.dgvModelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModelos.Size = new System.Drawing.Size(681, 144);
+            this.dgvModelos.Size = new System.Drawing.Size(762, 270);
             this.dgvModelos.TabIndex = 0;
             this.dgvModelos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModelos_CellDoubleClick);
             // 
@@ -145,13 +150,14 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.picMarca);
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvModelos);
-            this.splitContainer1.Size = new System.Drawing.Size(681, 213);
-            this.splitContainer1.SplitterDistance = 65;
+            this.splitContainer1.Size = new System.Drawing.Size(762, 394);
+            this.splitContainer1.SplitterDistance = 120;
             this.splitContainer1.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -163,26 +169,28 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel1.Controls.Add(this.txtNome, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnAddImage, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnRemoverImage, 2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 20);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(678, 52);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.31579F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.68421F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(572, 76);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // txtNome
             // 
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNome.Location = new System.Drawing.Point(92, 29);
+            this.txtNome.Location = new System.Drawing.Point(92, 41);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(288, 20);
+            this.txtNome.Size = new System.Drawing.Size(379, 20);
             this.txtNome.TabIndex = 3;
             // 
             // label1
@@ -199,7 +207,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 26);
+            this.label2.Location = new System.Drawing.Point(3, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 1;
@@ -222,9 +230,9 @@
             this.menuSair,
             this.menuSalvar,
             this.menuRemover});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 213);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 394);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(681, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(762, 26);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -265,15 +273,54 @@
             this.menuRemover.Text = "Remover";
             this.menuRemover.Click += new System.EventHandler(this.menuRemover_Click);
             // 
+            // picMarca
+            // 
+            this.picMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picMarca.Location = new System.Drawing.Point(578, 12);
+            this.picMarca.Name = "picMarca";
+            this.picMarca.Size = new System.Drawing.Size(172, 95);
+            this.picMarca.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMarca.TabIndex = 3;
+            this.picMarca.TabStop = false;
+            // 
+            // ofdImagem
+            // 
+            this.ofdImagem.FileName = "openFileDialog1";
+            this.ofdImagem.Filter = "Imagens|*.jpg;*.jpeg;*.jpe;*.png;";
+            this.ofdImagem.InitialDirectory = "%USERPROFILE%";
+            this.ofdImagem.Title = "Imagem";
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.Location = new System.Drawing.Point(477, 3);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(92, 32);
+            this.btnAddImage.TabIndex = 4;
+            this.btnAddImage.Text = "Add Imagem";
+            this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // btnRemoverImage
+            // 
+            this.btnRemoverImage.Location = new System.Drawing.Point(477, 41);
+            this.btnRemoverImage.Name = "btnRemoverImage";
+            this.btnRemoverImage.Size = new System.Drawing.Size(92, 32);
+            this.btnRemoverImage.TabIndex = 5;
+            this.btnRemoverImage.Text = "Rem. Imagem";
+            this.btnRemoverImage.UseVisualStyleBackColor = true;
+            this.btnRemoverImage.Click += new System.EventHandler(this.btnRemoverImage_Click);
+            // 
             // CadastroMarcasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 239);
+            this.ClientSize = new System.Drawing.Size(762, 420);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "CadastroMarcasForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Marcas";
             this.Load += new System.EventHandler(this.CadastroMarcasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelos)).EndInit();
@@ -286,6 +333,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +361,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantPortas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca_Id;
+        private System.Windows.Forms.PictureBox picMarca;
+        private System.Windows.Forms.Button btnAddImage;
+        private System.Windows.Forms.Button btnRemoverImage;
+        private System.Windows.Forms.OpenFileDialog ofdImagem;
     }
 }

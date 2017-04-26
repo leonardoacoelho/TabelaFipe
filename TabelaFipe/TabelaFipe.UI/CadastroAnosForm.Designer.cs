@@ -170,6 +170,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CadastroAnosForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Anos";
             this.Load += new System.EventHandler(this.CadastroAnosForm_Load);
             this.menuStrip1.ResumeLayout(false);

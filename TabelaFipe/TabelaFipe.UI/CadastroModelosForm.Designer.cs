@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnRemoverImage = new System.Windows.Forms.Button();
+            this.btnAddImage = new System.Windows.Forms.Button();
+            this.picModelo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,10 +59,12 @@
             this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRemover = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdImagem = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picModelo)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAnos)).BeginInit();
@@ -75,14 +80,50 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnRemoverImage);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAddImage);
+            this.splitContainer1.Panel1.Controls.Add(this.picModelo);
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvAnos);
-            this.splitContainer1.Size = new System.Drawing.Size(542, 345);
+            this.splitContainer1.Size = new System.Drawing.Size(721, 345);
             this.splitContainer1.SplitterDistance = 158;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // btnRemoverImage
+            // 
+            this.btnRemoverImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemoverImage.Location = new System.Drawing.Point(617, 111);
+            this.btnRemoverImage.Name = "btnRemoverImage";
+            this.btnRemoverImage.Size = new System.Drawing.Size(92, 32);
+            this.btnRemoverImage.TabIndex = 6;
+            this.btnRemoverImage.Text = "Rem. Imagem";
+            this.btnRemoverImage.UseVisualStyleBackColor = true;
+            this.btnRemoverImage.Click += new System.EventHandler(this.btnRemoverImage_Click);
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddImage.Location = new System.Drawing.Point(516, 111);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(92, 32);
+            this.btnAddImage.TabIndex = 5;
+            this.btnAddImage.Text = "Add Imagem";
+            this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // picModelo
+            // 
+            this.picModelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picModelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picModelo.Location = new System.Drawing.Point(516, 9);
+            this.picModelo.Name = "picModelo";
+            this.picModelo.Size = new System.Drawing.Size(193, 95);
+            this.picModelo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picModelo.TabIndex = 4;
+            this.picModelo.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -117,7 +158,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(539, 186);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 186);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label6
@@ -167,7 +208,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricao.Location = new System.Drawing.Point(200, 30);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(336, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(307, 20);
             this.txtDescricao.TabIndex = 3;
             // 
             // label1
@@ -198,7 +239,7 @@
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(200, 3);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(336, 20);
+            this.txtId.Size = new System.Drawing.Size(307, 20);
             this.txtId.TabIndex = 2;
             // 
             // txtPotencia
@@ -208,7 +249,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPotencia.Location = new System.Drawing.Point(200, 57);
             this.txtPotencia.Name = "txtPotencia";
-            this.txtPotencia.Size = new System.Drawing.Size(336, 20);
+            this.txtPotencia.Size = new System.Drawing.Size(307, 20);
             this.txtPotencia.TabIndex = 4;
             // 
             // txtCombustivel
@@ -218,7 +259,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCombustivel.Location = new System.Drawing.Point(200, 84);
             this.txtCombustivel.Name = "txtCombustivel";
-            this.txtCombustivel.Size = new System.Drawing.Size(336, 20);
+            this.txtCombustivel.Size = new System.Drawing.Size(307, 20);
             this.txtCombustivel.TabIndex = 5;
             // 
             // txtPortas
@@ -228,7 +269,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPortas.Location = new System.Drawing.Point(200, 111);
             this.txtPortas.Name = "txtPortas";
-            this.txtPortas.Size = new System.Drawing.Size(336, 20);
+            this.txtPortas.Size = new System.Drawing.Size(307, 20);
             this.txtPortas.TabIndex = 6;
             // 
             // txtMarca
@@ -239,7 +280,7 @@
             this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(200, 138);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(336, 20);
+            this.txtMarca.Size = new System.Drawing.Size(307, 20);
             this.txtMarca.TabIndex = 7;
             // 
             // txtMarcaId
@@ -271,7 +312,7 @@
             this.dgvAnos.Name = "dgvAnos";
             this.dgvAnos.ReadOnly = true;
             this.dgvAnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAnos.Size = new System.Drawing.Size(542, 183);
+            this.dgvAnos.Size = new System.Drawing.Size(721, 183);
             this.dgvAnos.TabIndex = 0;
             this.dgvAnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnos_CellDoubleClick);
             // 
@@ -323,7 +364,7 @@
             this.menuRemover});
             this.menuStrip1.Location = new System.Drawing.Point(0, 319);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(542, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(721, 26);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -364,21 +405,30 @@
             this.menuRemover.Text = "Remover";
             this.menuRemover.Click += new System.EventHandler(this.menuRemover_Click);
             // 
+            // ofdImagem
+            // 
+            this.ofdImagem.FileName = "openFileDialog1";
+            this.ofdImagem.Filter = "Imagens|*.jpg;*.jpeg;*.jpe;*.png;";
+            this.ofdImagem.InitialDirectory = "%USERPROFILE%";
+            this.ofdImagem.Title = "Imagem";
+            // 
             // CadastroModelosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 345);
+            this.ClientSize = new System.Drawing.Size(721, 345);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "CadastroModelosForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Modelos";
             this.Load += new System.EventHandler(this.CadastroModelosForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picModelo)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnos)).EndInit();
@@ -419,5 +469,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo_id;
+        private System.Windows.Forms.PictureBox picModelo;
+        private System.Windows.Forms.Button btnAddImage;
+        private System.Windows.Forms.Button btnRemoverImage;
+        private System.Windows.Forms.OpenFileDialog ofdImagem;
     }
 }
