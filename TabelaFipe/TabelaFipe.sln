@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabelaFipe.DAL", "TabelaFipe.DAL\TabelaFipe.DAL.csproj", "{8A65946E-0E26-4A09-B306-4E2E245F4FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabelaFipe.BLL", "TabelaFipe.BLL\TabelaFipe.BLL.csproj", "{8B68AAEE-D171-4E78-867C-BA8328437825}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabelaFipe", "TabelaFipe\TabelaFipe.csproj", "{6E6DED36-9A9C-4794-ADEA-A53713E69B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabelaFipe.UI", "TabelaFipe.UI\TabelaFipe.UI.csproj", "{83008FC0-AE12-4715-B38B-D682B8B318C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A65946E-0E26-4A09-B306-4E2E245F4FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A65946E-0E26-4A09-B306-4E2E245F4FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A65946E-0E26-4A09-B306-4E2E245F4FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A65946E-0E26-4A09-B306-4E2E245F4FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B68AAEE-D171-4E78-867C-BA8328437825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B68AAEE-D171-4E78-867C-BA8328437825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B68AAEE-D171-4E78-867C-BA8328437825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B68AAEE-D171-4E78-867C-BA8328437825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6DED36-9A9C-4794-ADEA-A53713E69B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6DED36-9A9C-4794-ADEA-A53713E69B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6DED36-9A9C-4794-ADEA-A53713E69B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6DED36-9A9C-4794-ADEA-A53713E69B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83008FC0-AE12-4715-B38B-D682B8B318C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83008FC0-AE12-4715-B38B-D682B8B318C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83008FC0-AE12-4715-B38B-D682B8B318C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83008FC0-AE12-4715-B38B-D682B8B318C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
