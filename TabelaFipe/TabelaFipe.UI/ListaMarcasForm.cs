@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TabelaFipe.BLL;
+using TabelaFipe.UI.Reports;
 
 namespace TabelaFipe.UI
 {
@@ -104,6 +105,12 @@ namespace TabelaFipe.UI
                     }
                 }
             }
+        }
+
+        private void relatorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TabelaFipeReportForm();
+            form.Show();
         }
     }
 }

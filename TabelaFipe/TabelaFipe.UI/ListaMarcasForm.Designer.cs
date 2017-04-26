@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAdd,
-            this.menuSair});
+            this.menuSair,
+            this.relatorioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(790, 32);
@@ -69,6 +71,14 @@
             this.menuSair.Size = new System.Drawing.Size(62, 28);
             this.menuSair.Text = "Sai&r";
             this.menuSair.Click += new System.EventHandler(this.menuSair_Click);
+            // 
+            // relatorioToolStripMenuItem
+            // 
+            this.relatorioToolStripMenuItem.Image = global::TabelaFipe.UI.Properties.Resources.file;
+            this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(90, 28);
+            this.relatorioToolStripMenuItem.Text = "&Relatorio";
+            this.relatorioToolStripMenuItem.Click += new System.EventHandler(this.relatorioToolStripMenuItem_Click);
             // 
             // dgvMarcas
             // 
@@ -137,5 +147,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.BindingSource bsMarcas;
+        private System.Windows.Forms.ToolStripMenuItem relatorioToolStripMenuItem;
     }
 }

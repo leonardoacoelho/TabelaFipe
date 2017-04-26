@@ -61,6 +61,16 @@ namespace TabelaFipe.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] AnosReport {
+            get {
+                object obj = ResourceManager.GetObject("AnosReport", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cancel_stop_exit_1583 {
@@ -117,6 +127,26 @@ namespace TabelaFipe.UI.Properties {
             get {
                 object obj = ResourceManager.GetObject("file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] MarcasReport {
+            get {
+                object obj = ResourceManager.GetObject("MarcasReport", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ModelosReport {
+            get {
+                object obj = ResourceManager.GetObject("ModelosReport", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
